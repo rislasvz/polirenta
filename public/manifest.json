@@ -1,0 +1,21 @@
+{
+  "name": "Polirenta",
+  "short_name": "Polirenta",
+  "description": "Pólizas Jurídicas de Arrendamiento en Puebla y México",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131b4d",
+  "theme_color": "#131b4d",
+  "icons": [
+    {
+      "src": "/images/favicon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/favicon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

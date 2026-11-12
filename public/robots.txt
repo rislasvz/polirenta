@@ -1,0 +1,6 @@
+# robots.txt para Polirenta (https://polirenta.com)
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://polirenta.com/sitemap.xml
