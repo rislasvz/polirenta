@@ -52,11 +52,19 @@ function WhatsAppIcon() {
  */
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#1c2461] to-[#10173f] text-white">
+    <footer className="bg-gradient-to-b from-[#0e1e38] to-[#050b16] text-white">
       <div className="mx-auto grid max-w-7xl items-start gap-11 px-5 pt-15 pb-13 md:grid-cols-[1.2fr_1fr_1fr] md:gap-10">
         {/* Marca */}
         <div className="flex flex-col gap-5 md:pr-4">
-          <img src={BRAND.logo} alt="Polirenta" className="w-full max-w-[15rem]" />
+          <img
+            src={BRAND.logoLight}
+            alt="Polirenta - Pólizas Jurídicas de Arrendamiento"
+            width={904}
+            height={358}
+            loading="lazy"
+            decoding="async"
+            className="h-auto w-full max-w-[15rem] drop-shadow-sm"
+          />
           <p className="m-0 text-[0.9rem] leading-[1.7] text-white/80">
             En Polirenta garantizamos seguridad y tranquilidad en tus
             operaciones inmobiliarias: nos preocupamos por la protección de su
@@ -120,7 +128,7 @@ export function Footer() {
             href={BRAND.whatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-yellow p-3.5 text-[0.95rem] font-bold text-brand-ink no-underline shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#f0a524] hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] motion-reduce:transition-none"
+            className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-yellow p-3.5 text-[0.95rem] font-bold text-brand-ink no-underline shadow-[0_10px_24px_rgba(0,0,0,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-gold hover:shadow-[0_12px_28px_rgba(0,0,0,0.3)] motion-reduce:transition-none"
           >
             <WhatsAppIcon />
             Escríbenos por WhatsApp

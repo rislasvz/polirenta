@@ -124,8 +124,9 @@ export function getHomeSchema() {
         logo: {
           "@type": "ImageObject",
           url: `${SITE_URL}/images/logo-transparente.png`,
-          width: 500,
-          height: 120,
+          width: 904,
+          height: 358,
+          caption: "Polirenta - Pólizas Jurídicas de Arrendamiento Inmobiliario",
         },
         image: `${SITE_URL}/images/banner.jpg`,
         description:

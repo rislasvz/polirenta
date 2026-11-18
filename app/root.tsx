@@ -21,9 +21,10 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Slab:wght@400;600;700&display=swap",
   },
-  { rel: "icon", type: "image/jpeg", href: "/images/favicon.jpeg" },
+  { rel: "icon", type: "image/png", sizes: "32x32", href: "/images/favicon-32.png" },
+  { rel: "icon", type: "image/png", sizes: "192x192", href: "/images/icon-192.png" },
+  { rel: "apple-touch-icon", sizes: "192x192", href: "/images/icon-192.png" },
   { rel: "shortcut icon", href: "/favicon.ico" },
-  { rel: "apple-touch-icon", href: "/images/favicon.jpeg" },
   { rel: "manifest", href: "/manifest.json" },
 ];
 
@@ -34,7 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="content-language" content="es-MX" />
-        <meta name="theme-color" content="#131b4d" />
+        <meta name="theme-color" content="#152c52" />
         <meta name="format-detection" content="telephone=no" />
         <Meta />
         <Links />

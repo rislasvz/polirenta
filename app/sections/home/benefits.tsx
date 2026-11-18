@@ -7,7 +7,7 @@ interface BenefitsProps {
 /** Sección oscura de beneficios con tarjetas doradas */
 export function Benefits({ content }: BenefitsProps) {
   return (
-    <section className="bg-gradient-to-b from-[#131b4d] to-[#0e1338] px-0 pt-18 pb-20">
+    <section className="bg-gradient-to-b from-[#0a172c] to-[#050b16] px-0 pt-18 pb-20">
       <div className="mx-auto mb-12 max-w-4xl px-4 text-center">
         <p className="m-0 mb-3 text-[0.8rem] font-semibold tracking-[0.18em] uppercase text-brand-yellow">
           {content.eyebrow}
@@ -16,7 +16,7 @@ export function Benefits({ content }: BenefitsProps) {
           {content.title}
         </h2>
         {content.subtitle && (
-          <p className="mx-auto my-0 max-w-xl text-[0.95rem] leading-[1.65] text-[#a9aed2]">
+          <p className="mx-auto my-0 max-w-xl text-[0.95rem] leading-[1.65] text-[#b0b9cf]">
             {content.subtitle}
           </p>
         )}
@@ -26,7 +26,7 @@ export function Benefits({ content }: BenefitsProps) {
         {content.items.map((item) => (
           <li
             key={item.label}
-            className="flex flex-col rounded-2xl border border-brand-yellow/55 bg-[#151c3d] p-8 transition-all duration-250 motion-reduce:transition-none hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_14px_34px_rgba(0,0,0,0.35)]"
+            className="flex flex-col rounded-2xl border border-brand-yellow/55 bg-[#0e1e38] p-8 transition-all duration-250 motion-reduce:transition-none hover:-translate-y-1 hover:border-brand-yellow hover:shadow-[0_14px_34px_rgba(0,0,0,0.35)]"
           >
             <span className="flex h-15 w-15 items-center justify-center rounded-xl border-[1.5px] border-brand-yellow/70">
               <img

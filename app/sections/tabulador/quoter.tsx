@@ -190,7 +190,7 @@ export function Quoter({ cities, tiers }: QuoterProps) {
           </article>
 
           {/* Plan 2: Póliza Jurídica Tradicional (DESTACADA / MÁS CONTRATADA) */}
-          <article className="relative flex flex-col rounded-2xl border-2 border-brand bg-gradient-to-b from-[#131b4d] to-[#1c2461] p-7 text-white shadow-2xl transition-all duration-250 lg:-translate-y-3">
+          <article className="relative flex flex-col rounded-2xl border-2 border-brand-yellow/60 bg-gradient-to-b from-[#0e1e38] to-[#050b16] p-7 text-white shadow-2xl transition-all duration-250 lg:-translate-y-3">
             {/* Badge de Plan Recomendado */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-yellow px-4 py-1 text-xs font-bold tracking-wide uppercase text-brand-ink shadow-md">
               ★ Más Contratada

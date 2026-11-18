@@ -102,8 +102,8 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
     activeTier != null && activeTier.min > PERCENTAGE_THRESHOLD;
 
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-gradient-to-br from-[#10173f] via-[#1c2461] to-[#2e388a] text-white">
-      {/* Fondo alusivo a Angelópolis: versión ligera en móvil, completa en escritorio */}
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-slate-900 text-brand-ink">
+      {/* Fondo alusivo a Angelópolis (ciudad): imagen visible al 100% */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <picture>
           <source
@@ -120,39 +120,42 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
             loading="eager"
             width="1920"
             height="1080"
-            className="h-full w-full object-cover object-center opacity-55"
+            className="h-full w-full object-cover object-center opacity-95 brightness-[0.98] contrast-[1.02]"
           />
         </picture>
       </div>
+
+      {/* Capa de opacidad estratégica: cubre la mitad izquierda para lectura perfecta y se desvanece a transparente en la mitad derecha */}
       <div
-        className="absolute inset-0 z-1 bg-[radial-gradient(60rem_40rem_at_15%_85%,rgba(16,23,63,0.55),transparent_70%),linear-gradient(90deg,rgba(16,23,63,0.88)_0%,rgba(16,23,63,0.62)_45%,rgba(16,23,63,0.42)_100%)]"
+        className="absolute inset-0 z-1 bg-gradient-to-b from-white/95 via-white/85 to-white/70 min-[900px]:bg-gradient-to-r min-[900px]:from-[#f7f5ef]/95 min-[900px]:via-[#f7f5ef]/80 min-[900px]:via-45% min-[900px]:to-transparent min-[900px]:to-65%"
         aria-hidden="true"
       />
 
       <div className="relative z-2 mx-auto flex w-full max-w-[82rem] flex-col items-stretch gap-10 px-5 pt-28 pb-14 min-[900px]:min-h-[88vh] min-[900px]:flex-row min-[900px]:items-center min-[900px]:gap-14 min-[900px]:pt-32 min-[900px]:pb-18">
-        {/* ----- Copy ----- */}
-        <div className="flex max-w-2xl flex-1 flex-col items-start gap-6">
+        {/* ----- Copy: 100% transparente sin recuadros ni brillos, tipografía mate y limpia ----- */}
+        <div className="flex max-w-2xl flex-1 flex-col items-start gap-6 bg-transparent p-0">
           {content.eyebrow && (
-            <p className="m-0 text-[0.85rem] font-bold tracking-[0.18em] uppercase text-brand-yellow">
+            <p className="m-0 inline-flex items-center gap-2 rounded-full border border-brand/20 bg-white/90 px-4 py-1.5 text-[0.82rem] font-bold tracking-[0.16em] uppercase text-brand shadow-xs">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
               {content.eyebrow}
             </p>
           )}
 
-          <h1 className="m-0 font-slab text-5xl font-bold leading-[1.08] text-white [text-wrap:balance] min-[900px]:text-6xl">
+          <h1 className="m-0 font-slab text-5xl font-extrabold leading-[1.08] text-[#071324] [text-wrap:balance] min-[900px]:text-6xl">
             {content.titleLines.map((line, i) => (
-              <span key={i} className={line.accent ? "text-brand-yellow" : undefined}>
+              <span key={i} className={line.accent ? "text-brand" : undefined}>
                 {line.text}
                 {i < content.titleLines.length - 1 ? " " : ""}
               </span>
             ))}
           </h1>
 
-          <p className="m-0 max-w-lg text-[1.15rem] leading-[1.65] text-white/88 [text-wrap:pretty] min-[900px]:text-[1.18rem]">
+          <p className="m-0 max-w-lg text-[1.15rem] font-medium leading-[1.65] text-[#1f2937] [text-wrap:pretty] min-[900px]:text-[1.2rem]">
             {content.leadParts.map((part, i) => {
-              if (part.bold) return <strong key={i} className="font-bold text-white">{part.text}</strong>;
+              if (part.bold) return <strong key={i} className="font-extrabold text-[#071324]">{part.text}</strong>;
               if (part.accent)
                 return (
-                  <span key={i} className="font-semibold text-brand-yellow">
+                  <span key={i} className="font-bold text-brand">
                     {part.text}
                   </span>
                 );
@@ -160,13 +163,13 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
             })}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 pt-1">
             {content.ctas.map((cta) =>
               cta.variant === "primary" ? (
                 <Link
                   key={cta.label}
                   to={cta.href}
-                  className="inline-flex items-center gap-2 rounded-lg bg-brand-yellow px-6 py-3.5 text-[0.95rem] font-bold text-[#131b4d] no-underline shadow-[0_10px_24px_rgba(249,177,50,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 min-[900px]:px-7 min-[900px]:py-4 min-[900px]:text-base"
+                  className="inline-flex items-center gap-2 rounded-lg bg-brand-yellow px-6 py-3.5 text-[0.95rem] font-bold text-brand-ink no-underline shadow-[0_8px_20px_rgba(188,154,103,0.4)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-gold min-[900px]:px-7 min-[900px]:py-4 min-[900px]:text-base"
                 >
                   {cta.label} →
                 </Link>
@@ -174,7 +177,7 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
                 <Link
                   key={cta.label}
                   to={cta.href}
-                  className="inline-flex items-center rounded-lg border-[1.5px] border-white/65 bg-transparent px-6 py-3.5 text-[0.95rem] font-semibold text-white no-underline transition-colors duration-200 hover:border-white hover:bg-white/12 min-[900px]:px-7 min-[900px]:py-4 min-[900px]:text-base"
+                  className="inline-flex items-center rounded-lg border-2 border-brand bg-white/90 px-6 py-3.5 text-[0.95rem] font-bold text-brand no-underline shadow-sm backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand hover:text-white min-[900px]:px-7 min-[900px]:py-4 min-[900px]:text-base"
                 >
                   {cta.label} →
                 </Link>
@@ -187,7 +190,7 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
         <div className="flex flex-col min-[900px]:ml-auto min-[900px]:w-[25rem] min-[900px]:shrink-0">
           {/* ----- Calculadora de póliza ----- */}
           <div
-            className="flex flex-col rounded-2xl border border-[#e2e6f0] bg-white p-7 text-[#131b4d] shadow-[0_14px_40px_rgba(19,27,77,0.12)] min-[900px]:p-8"
+            className="flex flex-col rounded-2xl border border-[#dce1ed] bg-white p-7 text-brand-ink shadow-[0_16px_45px_rgba(10,23,44,0.08)] min-[900px]:p-8"
             aria-label="Cotizador de póliza"
           >
             <h2 className="m-0 mb-1.5 font-slab text-xl font-bold leading-snug tracking-tight text-[#131b4d]">
@@ -273,21 +276,21 @@ export function HomeHero({ content, calculator }: HomeHeroProps) {
                 href={calculator.whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-brand-yellow px-4 py-3.5 text-center text-[0.95rem] font-bold text-[#131b4d] no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#f0a524]"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-brand-yellow px-4 py-3.5 text-center text-[0.95rem] font-bold text-brand-ink no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-gold"
               >
                 <WhatsAppIcon />
                 {calculator.requestLabel}
               </a>
               <a
                 href={calculator.phoneHref}
-                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-brand px-4 py-3.5 text-center text-[0.95rem] font-bold text-white no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#262e6f]"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-brand px-4 py-3.5 text-center text-[0.95rem] font-bold text-white no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:brightness-110"
               >
                 <PhoneIcon />
                 {calculator.requestPhoneLabel}
               </a>
               <a
                 href={calculator.emailHref}
-                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-[#d7dbf2] bg-white px-4 py-3.5 text-center text-[0.95rem] font-bold text-[#131b4d] no-underline shadow-sm transition-all duration-200 hover:border-brand hover:bg-[#f5f6fb]"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-[#d7dbf2] bg-white px-4 py-3.5 text-center text-[0.95rem] font-bold text-brand-ink no-underline shadow-sm transition-all duration-200 hover:border-brand hover:bg-[#f5f6fb]"
               >
                 <MailIcon />
                 {calculator.requestEmailLabel}

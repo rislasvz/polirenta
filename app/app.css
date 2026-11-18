@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colores de marca de Polirenta */
-  --color-brand: #2e388a; /* azul principal */
-  --color-brand-ink: #131b4d; /* azul marino profundo (titulares) */
-  --color-brand-light: #9aa6f5; /* azul claro corporativo (acentos sobre fondos oscuros) */
-  --color-brand-yellow: #f9b132; /* amarillo/dorado de acento */
-  --color-brand-tint: #eef1f8; /* tinte azul corporativo suave (fondos) */
-  --color-brand-text: #57607a; /* gris de texto corporativo */
+  /* Colores de marca de Polirenta basados en el nuevo logotipo */
+  --color-brand: #152c52; /* azul marino corporativo de prestigio (nuevo logo) */
+  --color-brand-ink: #0a172c; /* azul noche profundo (titulares y contrastes) */
+  --color-brand-light: #446599; /* azul corporativo medio para acentos */
+  --color-brand-yellow: #bc9a67; /* dorado de prestigio del nuevo logotipo */
+  --color-brand-gold: #c9a773; /* dorado luminoso para hover y realces */
+  --color-brand-tint: #f3f6fa; /* tinte corporativo suave (fondos limpios) */
+  --color-brand-text: #475467; /* gris editorial moderno y legible */
 
   --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
   --font-slab: "Roboto Slab", ui-serif, Georgia, serif;
@@ -52,6 +53,6 @@ body {
 }
 
 ::selection {
-  background: rgb(249 177 50 / 35%);
-  color: #131b4d;
+  background: rgb(188 154 103 / 35%);
+  color: #071324;
 }

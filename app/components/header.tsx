@@ -32,26 +32,28 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /** Solo el Inicio (hero azul marino) permite header transparente;
-   *  en las páginas interiores el menú siempre va con fondo blanco. */
-  const overDarkHero = pathname === "/";
-  const overlay = overDarkHero && !scrolled && !open;
+  /** El header ahora descansa sobre fondos claros en todas las vistas */
+  const overlay = false;
 
   return (
     <header
       className={`fixed top-0 right-0 left-0 z-60 transition-colors duration-250 ease-out motion-reduce:transition-none ${
-        overlay
-          ? "bg-transparent"
-          : "bg-white shadow-[0_1px_8px_rgba(0,0,0,0.08)]"
+        scrolled
+          ? "bg-white/95 shadow-[0_2px_12px_rgba(10,23,44,0.06)] backdrop-blur-md"
+          : "bg-white/80 backdrop-blur-xs border-b border-black/5"
       }`}
     >
       <div className="mx-auto flex max-w-[82rem] items-center justify-between px-5 py-3 min-[900px]:grid min-[900px]:grid-cols-[1fr_auto_1fr] min-[900px]:gap-6">
         {/* Columna izquierda: Logo */}
         <div className="flex items-center justify-start">
-          <Link to="/" aria-label="Ir a la página de inicio" onClick={() => setOpen(false)}>
+          <Link to="/" aria-label="Ir a la página de inicio de Polirenta" onClick={() => setOpen(false)}>
             <img
               src={BRAND.logo}
-              alt="Polirenta — Pólizas Jurídicas de Arrendamiento"
+              alt="Polirenta — Pólizas Jurídicas de Arrendamiento Inmobiliario"
+              width={904}
+              height={358}
+              fetchPriority="high"
+              decoding="async"
               className={`block w-auto transition-all duration-250 ease-out motion-reduce:transition-none ${
                 overlay ? "h-16" : "h-13"
               }`}
@@ -103,7 +105,7 @@ export function Header() {
             href={BRAND.whatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-yellow px-5 py-2.5 text-[0.9rem] font-bold tracking-wide text-brand-ink no-underline shadow-[0_2px_10px_rgba(19,27,77,0.1)] transition-all duration-200 hover:brightness-105 active:translate-y-0"
+            className="inline-flex items-center gap-2 rounded-lg bg-brand-yellow px-5 py-2.5 text-[0.9rem] font-bold tracking-wide text-brand-ink no-underline shadow-[0_2px_10px_rgba(7,19,36,0.12)] transition-all duration-200 hover:brightness-105 active:translate-y-0"
           >
             <PhoneIcon />
             Contáctanos

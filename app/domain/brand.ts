@@ -8,7 +8,8 @@ import type { NavItem } from "./content-types";
 export const BRAND = {
   name: "Polirenta",
   logo: "/images/logo-transparente.png",
-  longLogo: "/images/logo-largo.png",
+  logoLight: "/images/logo-light.png",
+  longLogo: "/images/logo-transparente.png",
   phone: "2228077863",
   phoneHref: "tel:2228077863",
   email: "contacto@polirenta.com",
